@@ -23,7 +23,7 @@ export class UsersService {
     return this.userModel.findOne({ _id: id }).exec();
   }
 
-  async update(id: number, updateUserDto: UpdateUserDto): Promise<User> {
+  async update(id: string, updateUserDto: UpdateUserDto): Promise<User> {
     const updated = await this.userModel.findOneAndUpdate(
       { _id: id },
       updateUserDto,
